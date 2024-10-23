@@ -1,9 +1,12 @@
 CC=gcc
 CFLAGS= -Wall -Werror -g
 
-build: main.o
-	$(CC) $(CFLAGS) main.o -o rps
+run: build
+	./rps
 
-main.o: main.c
+build: main.c
+	$(CC) $(CFLAGS) main.c -o rps
+
 
 clean:
+	rm -rf rps
